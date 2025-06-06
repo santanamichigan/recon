@@ -1,0 +1,5 @@
+modules:
+  webscan:
+    enabled: true
+    plugins:
+      - sqldet
